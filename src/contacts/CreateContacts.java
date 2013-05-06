@@ -307,7 +307,7 @@ public class CreateContacts {
     	//First it lists all the buckets
     	//Then it asks for credentials
     	
-    	System.out.println("Create Object: ");
+    	System.out.println("Create Contact: ");
         System.out.println("--------------------------");
         
         chooseABucket();
