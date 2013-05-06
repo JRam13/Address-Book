@@ -350,7 +350,7 @@ public class CreateContacts {
     	FileWriter fr = new FileWriter(file);
     	br = new BufferedWriter(fr);
     	
-    	br.write("<h1>My Adress Book</h1>");
+    	br.write("<h1>My Address Book</h1>");
     	br.newLine();
     	
       String selectExpression = "select * from `" + myDomain + "`";
