@@ -3,7 +3,6 @@ package contacts;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -623,11 +622,13 @@ public class CreateContacts {
             }
             count++;
         }
-    	System.out.println("Tag value : e.g., friend, family, work, vendor, etc");
+    	System.out.println("Tag name : e.g., Phone: Work, Relationship, etc");
     	scn = new Scanner(System.in); 
+    	String tagName = scn.nextLine();
+    	System.out.println(tagName + " : ");
     	String value = scn.nextLine();
     	List<ReplaceableAttribute> replaceableAttributes = new ArrayList<ReplaceableAttribute>();
-        replaceableAttributes.add(new ReplaceableAttribute("Tag", value, true));
+        replaceableAttributes.add(new ReplaceableAttribute(tagName, value, true));
     	sdb.putAttributes(new PutAttributesRequest(myDomain, currentContact, replaceableAttributes));
     	
     	s3.putObject(new PutObjectRequest(currentBucket, key, createContactHTML()));
